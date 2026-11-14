@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestCreateAccount(t *testing.T) {
+func createRandomAccount(t *testing.T) {
 	arg := CreateAccountParams{
 		Owner:    util.RandomOwner(),
 		Balance:  util.RandomMoney(),
@@ -25,5 +25,13 @@ func TestCreateAccount(t *testing.T) {
 
 	require.NotZero(t, account.ID)
 	require.NotZero(t, account.CreatedAt)
+}
 
+func TestCreateAccount(t *testing.T) {
+	createRandomAccount(t)
+
+}
+
+func TestGetAccount(t *testing.T) {
+	//create account
 }
